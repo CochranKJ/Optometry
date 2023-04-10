@@ -2,12 +2,12 @@ import tkinter
 
 
 class Patient:
-    def __init__(self):
-        self.__name = ""
-        self.__address = ""
-        self.__phone_no = ""
-        self.__insurance = False
-        self.__prescription = ""
+    def __init__(self,name,address,phone, insurance,prescription):
+        self.__name = name
+        self.__address = address
+        self.__phone_no = phone
+        self.__insurance = insurance
+        self.__prescription = prescription
 
     def set_personal_info(self):
         self.__name = input("Enter Name: ")
@@ -41,12 +41,12 @@ class Patient:
 
 
 class Appointments:
-    def __init__(self):
-        self.__appointment_date = {}
-        self.__appointment_time = ""
-        self.__dr_name = ""
-        self.__patient_name = ""
-        self.__cost = ""
+    def __init__(self,name,appointment_time,appointment_date,dr_name):
+        self.__appointment_date =appointment_date
+        self.__appointment_time = appointment_time
+        self.__dr_name = dr_name
+        self.__patient_name = name
+
 
     def set_appointment(self):
         self.__patient_name = input("Enter Patient's Name: ")
@@ -60,8 +60,7 @@ class Appointments:
     def show_appointment(self):
         print("Patient Name:", self.__patient_name)
         print("Doctor Name:", self.__dr_name)
-        print("Appointment Scheduled for", self.__appointment_time, "on", self.__appointment_date["month"], "/",
-              self.__appointment_date["day"], "/", self.__appointment_date["year"])
+        print("Appointment Scheduled for", self.__appointment_time, "on", self.__appointment_date)
 
     def get_patient_name(self):
         return self.__patient_name
